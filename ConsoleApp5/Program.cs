@@ -40,11 +40,9 @@ namespace ConsoleApp5
                     {
                         DataRest[3][i] = DataRest[3][i].Replace(".", string.Empty);
                         DataRest[3][i] = DataRest[3][i].Insert(2, ".");
-                    }
-
-                    exportSVC.Add("Ticks; offsetTime; GPSLong; GPSLat; GPSDate; GPSTime; GPSheightMSL; GPShDOP; GPSpDOP; GPSsAcc; GPSnumGPS; GPSnumGLNAS; GPSnumSV; GPSkoord");
+                    }                                   
                     
-                    for (int i = 2; i < DataRest[2].Count; i++)
+                    for (int i = 0; i < DataRest[2].Count; i++)
                     {
                         exportSVC.Add(DataRest[0][i] + ";" + DataRest[1][i] + ";" + DataRest[2][i] + ";" + DataRest[3][i] + ";" + DataRest[4][i] + ";" + DataRest[5][i] + ";" + DataRest[6][i] + ";" + DataRest[7][i] + ";" + DataRest[8][i] + ";" + DataRest[9][i] + ";" + DataRest[10][i] + ";" + DataRest[11][i] + ";" + DataRest[12][i] + ";" + DataRest[2][i] + ", " + DataRest[3][i]);
 
