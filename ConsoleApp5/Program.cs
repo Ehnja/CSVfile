@@ -40,12 +40,18 @@ namespace ConsoleApp5
                     {
                         DataRest[3][i] = DataRest[3][i].Replace(".", string.Empty);
                         DataRest[3][i] = DataRest[3][i].Insert(2, ".");
-                    }                                   
+                    }
                     
-                    for (int i = 0; i < DataRest[2].Count; i++)
+                    DataRest[13].Add("GPSkoord");
+                    DataRest[13].Add("");
+                    Console.WriteLine(DataRest[13]);
+                    for (int i = 2; i < DataRest[2].Count; i++)
                     {
-                        exportSVC.Add(DataRest[0][i] + ";" + DataRest[1][i] + ";" + DataRest[2][i] + ";" + DataRest[3][i] + ";" + DataRest[4][i] + ";" + DataRest[5][i] + ";" + DataRest[6][i] + ";" + DataRest[7][i] + ";" + DataRest[8][i] + ";" + DataRest[9][i] + ";" + DataRest[10][i] + ";" + DataRest[11][i] + ";" + DataRest[12][i] + ";" + DataRest[2][i] + ", " + DataRest[3][i]);
-
+                        DataRest[13].Add(DataRest[2][i] + ", " + DataRest[3][i]);
+                    }
+                    for (int i = 0; i < DataRest[2].Count; i++)
+                    {                        
+                        exportSVC.Add(DataRest[0][i] + ";" + DataRest[1][i] + ";" + DataRest[2][i] + ";" + DataRest[3][i] + ";" + DataRest[4][i] + ";" + DataRest[5][i] + ";" + DataRest[6][i] + ";" + DataRest[7][i] + ";" + DataRest[8][i] + ";" + DataRest[9][i] + ";" + DataRest[10][i] + ";" + DataRest[11][i] + ";" + DataRest[12][i] + ";" + DataRest[13][i]/*DataRest[2][i] + ", " + DataRest[3][i]*/);
                     }
 
                     File.WriteAllLines(@"C:\flyvning\flyvning2.csv", exportSVC); 
